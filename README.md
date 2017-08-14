@@ -92,3 +92,4 @@ Installing Jekyll on your computer enables you to build the website and preview 
 * If you want to deploy the site but also have draft posts that aren't ready to be published yet, you can add `published: false` to the draft posts' YAML frontmatter or place them in the `_drafts/` folder.
 * Full documentation for everything that Jekyll is capable of is at http://jekyllrb.com/.
 * Questions? Contact @chnn.
+
