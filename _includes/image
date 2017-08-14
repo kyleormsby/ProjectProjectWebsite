@@ -1,0 +1,9 @@
+{% capture path %}{{ site.baseurl }}/assets/posts/{{ page.slug }}/{{ include.name }}{% endcapture %}
+{% if include.caption %}
+<figure>
+    <img style="{% if include.width %} max-width: {{include.width}}; {% endif %} {% if include.height %} max-height: {{include.height}}; {% endif %}" src="{{ path }}" {% if include.alt %} alt="{{ include.alt }}" {% endif %} />
+    <figcaption>{{ include.caption | markdownify}}</figcaption>
+</figure>
+{% else %}
+<img style="{% if include.width %} max-width: {{include.width}}; {% endif %} {% if include.height %} max-height: {{include.height}}; {% endif %}" src="{{ path }}" {% if include.alt %} alt="{{ include.alt }}" {% endif %} />
+{% endif %}

@@ -1,0 +1,8 @@
+baseurl: /~ormsbyk/projectproject
+permalink: /posts/:title.html
+collections:
+  news:
+    permalink: /:collection/:title
+    output: true
+  bios:
+    output: false

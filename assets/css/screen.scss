@@ -1,0 +1,468 @@
+---
+---
+
+$serif: Merriweather, Georgia, serif;
+$sans: 'Merriweather Sans', Helvetica, sans-serif;
+
+$light-blue: #3498db;
+$blue: #2980b9;
+$pale-yellow: #fffdef;
+$reed-red: #870400;
+$lightest-gray: #f5f7f7;
+$light-gray: #ecf0f1;
+$gray: #7f8c8d;
+$black: #2c3e50;
+$light-black: #34495e;
+
+$max-post-width: 640px;
+
+html, button, input, select, textarea, .pure-g [class *= "pure-u"] {
+}
+
+html {
+  font-size: 62.5%;
+  font-family: $serif;
+}
+
+body {
+  color: $black;
+  font-size: 1.6rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+#project-italic {
+  text-shadow: -10px 15px 4px rgba(0,0,0,0.3);
+}
+
+img {
+  transition: all 1s;
+}
+
+img:hover {
+  transform: scale(1.1,1.1);
+  transition: all 2s;
+}
+
+a {
+  text-decoration: none;
+  color: $light-blue;
+
+  &:hover {
+    color: $blue;
+  }
+}
+
+p, li {
+  line-height: 2.4rem;
+}
+
+.centered {
+  margin: auto;
+  text-align: center;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+header {
+  text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+  
+  a {
+    font-style: italic;
+    font-size: 2.4rem;
+    color: $black;
+  }
+
+  a:hover {
+    color: $gray;
+  }
+}
+
+.container {
+  max-width: 900px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.topic-label {
+  display: inline-block;
+  font-family: $sans;
+  font-weight: normal;
+  color: $reed-red;
+  border-bottom: 1px solid $reed-red;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.home {
+  margin-bottom: 8rem;
+  width: 100%;
+  /*overflow-x: hidden;*/
+
+  h1 {
+    text-align: center;
+    font-size: 6rem;
+    margin-top: 8rem;
+    margin-bottom: 5rem;
+  }
+
+  img {
+    display: block;
+    width: 375px;
+    margin: 3rem auto 0 auto;
+  }
+
+  h2 {
+    font-family: $sans;
+    font-weight: normal;
+    text-align: center;
+    color: $reed-red;
+    border-bottom: 1px solid $reed-red;
+    padding-bottom: 1rem;
+    margin-bottom: 4rem;
+    margin-top: 5rem;
+    font-size: 2.5rem;
+  }
+
+  .blurb {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+
+  .projects {
+    text-align: center;
+  }
+
+  .topic-label {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    font-size: 2.0rem;
+  }
+
+  .topic-posts {
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    /*height: 200px;*/
+    width: 50vw;
+  }
+
+  .post-link {
+    width: 200px;
+  }
+
+  .post-link-container {
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    width: 200px;
+    transition: all 1s;
+  }
+
+  .post-link-container:hover {
+    padding-left: 40px;
+    padding-right: 40px;
+    transform: scale(1.1,1.1);
+    transition: all 2s;
+  }
+
+  .news {
+    width: 85%;
+    margin: 0 auto;
+    font-size: 1.4rem;
+
+    td {
+      vertical-align: text-bottom;
+      padding-bottom: 3rem;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .date {
+      white-space: nowrap;
+      font-style: italic;
+      color: $gray;
+      padding-right: 40px;
+    }
+  }
+}
+
+.post-link {
+  text-align: center;
+  margin-bottom: 6rem;
+
+  a {
+    color: $black;
+
+    &:hover {
+      color: $gray;
+    }
+  }
+
+  .title {
+    font-size: 2.0rem;
+    max-width: 500px;
+    margin: 1.5rem auto;
+  }
+
+  .author {
+    font-size: 1.5rem;
+    color: $gray;
+  }
+}
+
+.post {
+  margin: auto;
+  margin-bottom: 10rem;
+  overflow: hidden;
+  
+  .topic-label {
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+  }
+
+  .post-feature {
+    width: 100vw;
+    /*width: calc(100% + 4px);*/
+    /*max-width: 1200px;*/
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 6rem;
+
+    img, .stl-container {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .stl-container {
+    }
+  }
+
+  .below-fold {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .sidebar {
+    flex: 1 1 215px;
+  }
+
+  .resources {
+    background: $lightest-gray;
+    border-left: 3px solid $black;
+    padding: 2rem 3rem 1.5rem 2rem;
+    margin-top: 3.1rem;
+
+    h2 {
+      font-size: 1.6rem;
+      font-style: italic;
+      font-weight: bold;
+      margin: 0 0 1.5rem 0;
+      display: inline-block;
+    }
+
+    ul {
+      font-size: 1.4rem;
+      padding-left: 1.5rem;
+      margin: 0;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    a {
+      color: $black;
+      border-bottom: 1px dotted $black;
+    }
+  }
+
+  .byline {
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-style: italic;
+    margin-bottom: 3rem;
+  }
+
+  .post-body {
+    flex: 0 1 $max-post-width;
+    /*margin-right: 40px;*/
+    width: 50vw;
+    min-width: 500px;
+    max-width: 900px;
+    margin-left: 10%;
+
+  }
+
+  // .post-body > p:last-child::after {
+  //   content: '■';
+  //   padding-left: 1rem;
+  // }
+
+  .post-endmark {
+    text-align: center;
+  }
+
+  .backto {
+    display: block;
+    margin-top: 4rem;
+    margin-left: -22px;
+  }
+
+  .bio {
+    padding-top: 6rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    border-top: 1px solid lightgray;
+
+    h3 {
+      font-style: italic;
+      margin-top: 0;
+    }
+  }
+}
+
+.post, .page {
+  h1 {
+    font-size: 3.6rem;
+    line-height: 1.3;
+    margin: 0 auto 4rem auto;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-top: 5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2.0rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  h3 code {
+    font-size: 2.0rem;
+  }
+
+  pre, code {
+    font-size: 1.4rem;
+    background: $pale-yellow;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+  }
+
+  pre {
+    padding: 1rem;
+    overflow-x: auto;
+  }
+
+  pre code {
+    background: none;
+    border: none;
+  }
+
+  code {
+    padding: 0.2rem;
+  }
+
+  .highlighter-rouge {
+    max-width: $max-post-width;
+    overflow: hidden;
+  }
+
+  ul, ol {
+    padding-left: 0;
+  }
+
+  figure {
+    margin: 0 0 3rem 0;
+  }
+
+  figcaption p {
+    text-align: center;
+    font-size: 1.3rem;
+    font-style: italic;
+  }
+
+  p > img, figure img {
+    margin: 3rem auto;
+    display: block;
+    max-width: 100%;
+  }
+
+  p:first-child {
+    margin-top: 0;
+  }
+
+  .katex-display {
+    margin-bottom: 2.5rem;
+  }
+
+  .stl-container {
+    height: 400px;
+    margin: 3rem auto;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid $gray;
+    box-sizing: border-box;
+
+    .loading {
+      position: absolute;
+      width: 100%;
+      top: 45%;
+      text-align: center;
+      font-style: italic;
+      color: $gray;
+    }
+
+    &.loaded .loading {
+      display: none;
+    }
+
+    .tip {
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      background: $black;
+      padding: 10px 6px 6px 10px;
+      font-size: 1rem;
+      border-radius: 3px;
+      font-weight: bold;
+      color: white;
+      font-style: italic;
+    }
+
+    canvas {
+      cursor: pointer;
+    }
+  }
+}
+
+.page {
+  margin: 4rem auto;
+  width: $max-post-width;
+}
+
+@media (max-width: 800px) {
+  .post-body {
+    order: 1;
+  }
+
+  .sidebar {
+    order: 0;
+    margin: 0 0 4rem 0;
+  }
+}

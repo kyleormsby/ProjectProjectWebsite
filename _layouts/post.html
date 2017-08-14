@@ -1,0 +1,60 @@
+---
+layout: default
+---
+<div class="post">
+  <header>
+    <a href="{{site.baseurl}}/" title="Project Project Home">Project Project</a>
+  </header>
+  <div class="container">
+    <div class="post-header">
+      <div class="topic-label">{{ page.category }}</div>
+      <h1>{{ page.title }}</h1>
+    </div>
+  </div>
+  {% if page.feature %}
+    {% if page.feature.file_type == 'image' %}
+      <div class="post-feature">
+        {% include image name=page.feature.file %}
+      </div>
+    {% else if page.feature.file_type == 'stl' %}
+      <div class="post-feature">
+        {% include stl name=page.feature.file %}
+      </div>
+    {% endif %}
+  {% endif %}
+  <div class="container below-fold">
+    <div class="post-body">
+      <div class="byline">By {{ page.author }},&nbsp;{{ page.date | date: "%e %B %Y" }}</div>
+      {{ content }}
+      {% for bio in site.bios %}
+        {% if bio.name == page.author %}
+          <div class="bio">
+            <h3>About the author</h3> {{ bio.content | markdownify }}
+          </div>
+        {% endif %}
+      {% endfor %}
+      <a class="backto" href="{{ site.baseurl }}/">&larr; Back to Project Project Home</a>
+    </div>
+    <div class="sidebar">
+      {% if page.resources %}
+        <div class="resources">
+          <h2>Project Resources</h2>
+          <ul>
+            {% for resource in page.resources %}
+            <li>
+              <a class="resource-link" href="{% if resource.url %}{{ resource.url }}{% else if resource.file %}{{ site.baseurl }}/assets/posts/{{ page.slug }}/{{ resource.file }}{% endif %}" title="{{ resource.name }}">{{ resource.name }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script src="{{ site.baseurl }}/assets/js/three.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/stl-loader.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/orbit-controls.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/init-stl.js"></script>
+<!-- {{ page.date | date: "%e %B %Y" }} --> 
+

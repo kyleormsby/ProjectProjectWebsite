@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<div class="container home">
+  <h1>Welcome to Project Project.</h1>
+  <p class="blurb">This is a Reed College summer research <em>Project</em> dedicated to <em>Projecting</em> mathematical ideas into the visual realm. The team consists of Henry Blanchette, Cameron Fish, Chris Henn, Kyle Ormsby, Lana Tollas, and Jalan Ziyad.  We’ll be posting here about what we make, how we make it, and the math underlying all of it.</p>
+  <img src="{{ site.baseurl }}/assets/images/spheres.png" />
+  <h2>Topics</h2>
+  <div class="projects">
+    {% for category in site.categories %}
+      <div class="topic-label">
+        {{ category[0] }}
+      </div>
+      <div class="topic-posts">
+        {% assign posts = category[1] %}
+        {% for post in posts %}
+          <div class="post-link">
+            <a href="{{ site.baseurl }}{{ post.url }}" title="{{ post.title }}">
+              <div class="title">{{ post.title }}</div>
+              <div class="author">{{ post.author }}</div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+  {% if site.news.size > 0 %}
+    <h2>News</h2>
+    <table class="news">
+      {% assign sorted_news = site.news | reverse %}
+      {% for item in sorted_news %}
+        <tr>
+          <td class="date">{{ item.date | date: "%e %B %Y" }}</td>
+          <td class="text">{{ item.output }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+  <h2>Contact</h2>
+  <p>If you have any questions regarding Project Project, please contact Kyle Ormsby at <a href="mailto:ormsbyk@reed.edu">ormsbyk@reed.edu</a>.</p>
+</div>
