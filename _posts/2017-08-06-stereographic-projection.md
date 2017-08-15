@@ -42,7 +42,7 @@ This 2D to 1D example probably seems boring, but it clearly shows the process. I
 
 ## Interactive Examples
 
-The 3D model below demonstrates a circle on $$\mathbb{S}^2$$ being mapped to $$\mathbb{R}^2$$ via stereographic projection (created by Kyle Ormsby). Note that the circle is preserved (up to homeomorphism)!
+The 3D model below demonstrates a circle on $$\mathbb{S}^2$$ being mapped to $$\mathbb{R}^2$$ via stereographic projection (created by Kyle Ormsby). Note that the circle is preserved!
 
 {% include stl name="stereo_repaired.stl" %}
 
