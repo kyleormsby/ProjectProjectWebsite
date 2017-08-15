@@ -24,7 +24,7 @@ How does this sort of projection preserve what kind of structure, and how does i
 
 First of all I want to make notation clear, for the notation of an $$n$$-sphere ($$\mathbb{S}^n$$) is a little counterintuitive. A $$n$$-sphere is a sphere in $$n-1$$ dimensions: A 1-sphere is a circle (2-dimensional), a 2-sphere is 3-dimensional, a 3-sphere is 4-dimensional, etc. Additionally, $$n$$-spheres contain only the points that are the sphere's radius away from the sphere's center, and no points in between. This contrasts $$\mathbb{S}^n$$ from a closed $$n$$-disk ($$\mathbb{D}^n$$), which contains all the points on and within the $$\mathbb{S}^n$$. Now on to projection!
 
-Lets try projecting $$\mathbb{S}^1 \rightarrow \mathbb{R}^1$$, so $$n=1.$$. It is possible to modify the location and size of $$\mathbb{S}^n,$$ but let's not worry about that right now. To project a point $$p$$, from this circle down onto $$\mathbb{R}^1$$, draw a line from the top of the circle, a point we will call $$\infty$$, through $$p$$ making sure to extend your line so that it passes through $$\mathbb{R}^1$$. The point at which this line intersects $$\mathbb{R}^1$$ is $$p^\prime.$$
+Let's try projecting $$\mathbb{S}^1 \rightarrow \mathbb{R}^1$$, so $$n=1.$$. It is possible to modify the location and size of $$\mathbb{S}^n,$$ but let's not worry about that right now. To project a point $$p$$, from this circle down onto $$\mathbb{R}^1$$, draw a line from the top of the circle, a point we will call $$\infty$$, through $$p$$ making sure to extend your line so that it passes through $$\mathbb{R}^1$$. The point at which this line intersects $$\mathbb{R}^1$$ is $$p^\prime.$$
 
 In the gif below, the green dot is $$p$$ and the blue dot is $$p^\prime.$$
 
