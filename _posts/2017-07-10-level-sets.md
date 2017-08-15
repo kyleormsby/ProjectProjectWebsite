@@ -8,7 +8,7 @@ feature:
   file_type: image
 ---
 
-Level sets, the gradient, and gradient flow are methods of extracting specific features of a surface. You've heard of level sets and the gradient in vector calculus class – level sets show slices of a surface and the gradient shows a sort of 2D "slope" of a surface. These measurements are useful on their own, but they hint at something else, something more abstract. The gradient vectors are perpendicular to the level sets, so will always be in the direction of the "slope" of a point toward another point on another level set. But how would you represent that? The answer is the concept of <em>gradient flow</em>. Read more to learn about how these three standard measurements fit together to <em>flow</em> along a surface, much like a liquid or rolling object.
+Level sets, the gradient, and gradient flow are methods of extracting specific features of a surface. You've heard of level sets and the gradient in vector calculus class – level sets show slices of a surface and the gradient shows a sort of 2D "slope" of a surface. These measurements are useful on their own, but they hint at something else, something more abstract. The gradient vectors are perpendicular to the level sets, so will always be in the direction of the "slope" of a point toward a point on a level set. But how would you represent that? The answer is the concept of <em>gradient flow</em>. Read more to learn about how these three standard measurements fit together to <em>flow</em> along a surface, much like a liquid or rolling object.
 
 ## Level Sets
 
