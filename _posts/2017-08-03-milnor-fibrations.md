@@ -98,7 +98,7 @@ There's $$K$$, right where we expected it, bordering the fiber. In this projecti
 
 Now, how can we predict how this $$K$$ should look?
 
-## Theory on $$K$$
+## Theory of $$\mathbb{S}^3 \setminus K$$
 
 There is a detailed explanation of the topology of $$K$$ in Milnor's own work [Singular points of complex hypersurfaces](http://www.jstor.org/stable/j.ctt1bd6kvv), however I will only cover it briefly here.
 
@@ -108,7 +108,7 @@ $$
 \langle \textbf{v}(z), \textnormal{grad } \log f(z) \rangle
 $$
 
-is real and positive for all $$z$$ and that $$\langle \textbf{v}(z),z \rangle$$ has a positive real part. Next, consider the solutions to the differencial equation
+is real and positive for all $$z$$ and that $$\langle \textbf{v}(z),z \rangle$$ has a positive real part. Next, consider the solutions to the differential equation
 
 $$
 \frac{dp}{dt} = \textbf{v}(p(t))
@@ -126,7 +126,7 @@ Finally we have Milnor's lemma 5.10: Let $$c$$ be a small complex constant and $
 
 Additionally, if we pick a small enough $$\epsilon$$, then the concerned portion of $$\Phi(\theta)$$ is actually diffeomorphic to all of $$\Phi(\theta)$$! This cements the intuition that $$\Phi(\theta)$$ is basically sweeping around the boundary $$f^{-1}(0) = K$$, yielding our visuals of fibers all bounded by the same curve.
 
-This work also introduces us to another variable, $$\epsilon$$. In the lemmas, Milnor uses $$\epsilon$$ as the sizes of his disks. In my work, I've made analogous use of $$\epsilon$$ as the radius of the $$\mathbb{S}^3$$ that houses the fibers and provides the domain for stereographic projection. The particular $$\epsilon$$ that I've been using is $$2$$, which was originally felt out by [Dan Dreibelbis](https://www.unf.edu/~ddreibel/research/milnor/milnor.html) in his work at University of North Florida.
+This work also introduces us to another variable, $$\epsilon$$. In the lemmas, Milnor uses $$\epsilon$$ as the sizes of his disks. In my work, I've made analogous use of $$\epsilon$$ as the radius of the $$\mathbb{S}^3$$ that houses the fibers and provides the domain for stereographic projection. The particular $$\epsilon$$ that I've been using is $$2$$, which was originally felt out by [Dan Dreibel](https://www.unf.edu/~ddreibel/research/milnor/milnor.html) in his work at University of North Florida.
 
 ## Behavior of $$K$$
 
