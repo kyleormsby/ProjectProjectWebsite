@@ -132,4 +132,4 @@ Here's another video demonstrating how these bodies can be used as rollers:
 
 {% include image name="rollerdemo.mp4" caption="The box remains level and at a constand distance from the ground."  %}
 
-We had a lot of fun with this project, and want to thank our professor Kyle Ormsby for his knowledge and enthusiasm! We hope you found these posts both mathematically and visually interesting. If you’d like to play around with some of these shapes and ideas yourself, have a look at our mathematica code [here](assets/posts/constant-width-3/cw.nb). 
+We had a lot of fun with this project, and want to thank our professor Kyle Ormsby for his knowledge and enthusiasm! We hope you found these posts both mathematically and visually interesting. If you’d like to play around with some of these shapes and ideas yourself, have a look at our mathematica code [here](/~ormsbyk/projectproject/assets/posts/constant-width-3/cw.nb). 

@@ -10,6 +10,8 @@ resources:
     file: oct9.stl
   - name: Degree 7 Tetrahedral
     file: tet7.stl
+  - name: Degree 15 Icosahedral
+    file: ico15.stl
   - name: generators
     file: gens.txt
 
@@ -108,6 +110,6 @@ This whole process can be repeated for any other finite subgroup of $$SO(3)$$. B
 
 {% include stl name="ico15.stl" caption="This body has icosahedral symmetry (the support function is much too long to present here)." %}
 
-[Here's](assets/posts/constant-width-2/gens.txt) a list of the primary and secondary generators we found this way for the polynomials invariant under the groups T, O, and I.
+[Here's](/~ormsbyk/projectproject/assets/posts/constant-width-2/gens.txt) a list of the primary and secondary generators we found this way for the polynomials invariant under the groups T, O, and I.
 
 With this theory laid down, it’s straightforward to compute any number of support functions of interesting bodies of constant width with these symmetries. Next time, we’ll walk through the process of realizing one of these bodies, from initial choice of symmetry to final 3D-printed product.
