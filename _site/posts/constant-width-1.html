@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Project Project: Constructing Bodies of Constant Width </title>
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/~ormsbyk/projectproject/assets/css/normalize.min.css">
+
+  <!-- KaTeX assets -->
+  <link rel="stylesheet" href="/~ormsbyk/projectproject/assets/css/katex.min.css">
+  <script src="/~ormsbyk/projectproject/assets/js/katex.min.js"></script>
+
+  <!-- Site assets -->
+  <!-- <link rel="stylesheet" href="/~ormsbyk/projectproject/assets/css/screen.css"> -->
+  <link rel="stylesheet" href="/~ormsbyk/projectproject/assets/css/screen.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans|Merriweather:400,400i,700,700i" rel="stylesheet">
+</head>
+<body>
+  <div class="post">
+  <header>
+    <a href="/~ormsbyk/projectproject/" title="Project Project Home">Project Project</a>
+  </header>
+  <div class="container">
+    <div class="post-header">
+      <div class="topic-label">Constant Width</div>
+      <h1>Constructing Bodies of Constant Width</h1>
+    </div>
+  </div>
+  
+  <div class="container below-fold">
+    <div class="post-body">
+      <div class="byline">By Cameron Fish and Jalan Ziyad,&nbsp;25 August 2017</div>
+      <script type="text/javascript" async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<p>Consider what happens when you roll a sphere between your hands. Assuming your hands are perfectly flat and parallel, then no matter how you roll, the distance between your hands–the “width” of the sphere–should remain constant. Is a sphere the only solid for which this is true? Interestingly enough, there are in fact many solids possessing this constant width property which are not spheres! To see how, we need to be a little more formal with this idea of width.</p>
+
+<p>Suppose you have some compact, convex body living in <script type="math/tex">\mathbb{R}^2</script>. For example:</p>
+
+<figure>
+    <img style=" " src="/~ormsbyk/projectproject/assets/posts/constant-width-1/reuleaux.png" />
+    <figcaption><p>You might recognize this figure as the Reuleaux triangle.</p>
+</figcaption>
+</figure>
+
+<figure>
+    <img style=" " src="/~ormsbyk/projectproject/assets/posts/constant-width-1/crescent.png" />
+    <figcaption><p>This body is not convex–you can draw a line connecting two points inside it which pokes outside.</p>
+</figcaption>
+</figure>
+
+<p>To capture this notion of width, we want to be able to draw a pair parallel lines just touching the body in two places and find the distance between them. Notice that for any choice of unit vector, we can find a line with that vector as normal which touches the body at exactly one point. We can actually find two, since a line has two choices of unit normal vector, but we can insist that, for a given unit vector, the line we pick is the one with outwardly oriented normal (i.e. pointing away from the body, which is unambiguous since the body is convex). Thus, given a support line given by a unit normal vector <script type="math/tex">u</script>, the support line parallel to it is given by <script type="math/tex">-u</script>.  These “support lines” are analogous to our hands rolling the body around.</p>
+
+<figure>
+    <img style=" " src="/~ormsbyk/projectproject/assets/posts/constant-width-1/supportlines.gif" />
+    <figcaption><p>Pairs of parallel support lines given a varying unit vector angle–the distance between the lines is the width in that direction.. Note that this figure has constant width!</p>
+</figcaption>
+</figure>
+
+<p>We call the distance between two parallel support lines with normal direction <script type="math/tex">u</script> the width of the body in the <script type="math/tex">u</script> direction. If this width is the same for every choice of <script type="math/tex">u</script>, then the body has constant width. The usual notation is to define the “support function” <script type="math/tex">h</script> which, given a unit vector, gives you the distance from the center of the body to the support line having that vector as normal. Then, constant width means that <script type="math/tex">h(u) + h(-u)</script> is constant for any unit vector <script type="math/tex">u</script>. Note that we can similarly define bodies of constant width in any number of dimensions by defining the support function from <script type="math/tex">\mathbb{S}^{n-1}</script> to <script type="math/tex">\mathbb{R}^n</script> in general. The support lines become planes in three dimensions, and hyperplanes for <script type="math/tex">n \gt 3</script>.</p>
+
+<p>Given any convex body, there exists such a support function. It turns out that we can also choose specific support functions and guarantee they specify a convex body. First, consider the extension <script type="math/tex">H</script> of <script type="math/tex">h</script> where <script type="math/tex">H(su) = sh(u)</script> for unit vectors <script type="math/tex">u</script> in <script type="math/tex">\mathbb{R}^n</script> and <script type="math/tex">s \geq 0</script>  (in particular, <script type="math/tex">H(x) = H(\|x\|\frac{x}{\|x\|}) = \|x\|h(\frac{x}{\|x\|})</script> since <script type="math/tex">\frac{x}{\|x\|}</script> is in <script type="math/tex">\mathbb{S}^{n-1}</script>). <script type="math/tex">H</script> satisfies a few key properties:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+H(0) &= 0 \\
+H(su) &= sH(u) \mbox{ for }u\mbox{ in } \mathbb{R}^n \mbox{ and }s \gt 0 \\
+H(u + v) &\leq H(u) + H(v) \mbox{ for }u, v \mbox{ in }\mathbb{R}^n
+\end{aligned} %]]></script>
+
+<p>Additionally, <script type="math/tex">H</script> has the constant width property <script type="math/tex">H(u) + H(-u) = c</script> for <script type="math/tex">u</script> nonzero if and only if h also does. So, if we can find such a function with this constant width property <script type="math/tex">H(u) + H(-u) = c</script> and satisfying the above properties, then we have a convex body of constant width with support function <script type="math/tex">h = H \vert \mathbb{S}^{n-1}</script> (H restricted to the unit sphere).</p>
+
+<p>One such support function (given by Fillmore 1969) is <script type="math/tex">h(\theta) := a + Cos(3\theta)</script> for  <script type="math/tex">a \gt 8</script>. Note this is not defined in terms of unit vectors u, so let’s rewrite it as <script type="math/tex">h(x, y) = a - 3 x + 4 x^3</script>. (Note that <script type="math/tex">cos(3\theta) = 4(cos(\theta))^3 - 3cos (\theta)</script> and for unit <script type="math/tex">u</script>, the angle it makes with the x axis is <script type="math/tex">\theta = arccos(x))</script>. This function clearly satisfies the first two conditions above, and the third may be checked with some algebra and the triangle inequality.</p>
+
+<p>We can also see that this function has the constant width property:</p>
+
+<script type="math/tex; mode=display">h(u) + h(-u) = a - 3x + 4x^3 + a - 3(-x) + 4(-x)^3 = 2a.</script>
+
+<p>Therefore, we can define a body of constant width using this support function! Here’s what the body defined by this support function looks like (for a = 15 for example):</p>
+
+<p><img style=" " src="/~ormsbyk/projectproject/assets/posts/constant-width-1/analyticreuleaux.png" /></p>
+
+<p>Notice the similarity to the Reuleaux triangle depicted above—this body is an analytic version. (Choosing <script type="math/tex">a = 8</script> gives the Reuleaux triangle, and the body approaches a circle as a approaches infinity. For <script type="math/tex">a \lt 8</script> the body is no longer convex.)</p>
+
+<p>Here’s an example of a body of constant width in three dimensions:</p>
+
+<div class="stl-container" data-filename="/~ormsbyk/projectproject/assets/posts/constant-width-1/xyz.stl">
+  <div class="tip">Interactive 3D Model</div>
+  <span class="loading">Loading...</span>
+</div>
+
+<p>This body is piecewise smooth and has the same symmetries as a tetrahedron. It is an example from a particularly interesting class of bodies of constant width which exhibit the symmetries of familiar solids (tetrahedron, octahedron, icosahedron, etc), and other subgroups of <script type="math/tex">SO(3)</script>, i.e. rigid rotations of <script type="math/tex">\mathbb{R}^3</script>.</p>
+
+<p>How exactly can we create these bodies, given one of these support functions? Recall that our definition of constant width involves parallel support hyperplanes which bound the body in every direction. These planes are exactly <script type="math/tex">u\cdot x = h(u)</script> for all <script type="math/tex">u</script> in <script type="math/tex">\mathbb{S}^{n-1}</script> (i.e. the hyperplane <script type="math/tex">u_1x_1 + u_2x_2 + u_3x_3 + … + u_nx_n = h(u)</script>).</p>
+
+<p>If our support function h satisfies the above conditions, and so defines a convex body, then this body is the set of points x such that:</p>
+
+<script type="math/tex; mode=display">u\cdot x \leq h(u) \mbox{ for all } u</script>
+
+<p>In other words, each hyperplane divides <script type="math/tex">\mathbb{R}^{n}</script> into two half-spaces, and the body is the intersection of each of the “interior” half spaces (the ones lying opposite the normal vectors of the hyperplanes). So, one way to create a body given a support function is to simply find this intersection. This method turns out to be difficult to implement in practice however–you would need to have your mathematical software intersect an infinite, or at least very large, number of half-spaces.</p>
+
+<figure>
+    <img style=" " src="/~ormsbyk/projectproject/assets/posts/constant-width-1/suppinter.png" />
+    <figcaption><p>An approximation of the body using support lines. The body is the limiting intersection of the interior half spaces given by these lines.</p>
+</figcaption>
+</figure>
+
+<p>It turns out there is a simpler approach: for unit vectors <script type="math/tex">u</script> in <script type="math/tex">\mathbb{R}^n</script>, the gradient <script type="math/tex">\nabla H(u)</script> parametrizes the boundary of the convex body having support function <script type="math/tex">h = H\vert\mathbb{S}^{n-1}</script> (try checking this fact for yourself).</p>
+
+<p>For example, if we choose <script type="math/tex">f(x,y,z) = xyz</script> as above then we have:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+h &= 1 + xyz \\
+H &= \sqrt{x^2 + y^2 + z^2}\frac{1 + (x y z)}{(x^2 + y^2 + z^2)^{3/2}} \\
+H|S^{1} &= 1 + xyz \\
+\nabla H|S^{1}&=\begin{pmatrix}y z - 3 x^2 y z + x (1 + x y z)  \\x z - 3 x y^2 z + y (1 + x y z)\\ x y - 3 x y z^2 + z (1 + x y z)\end{pmatrix}
+\end{aligned} %]]></script>
+
+<p>Now, we can parametrize this gradient with spherical coordinates and plot it using Mathematica, giving the body seen above. Next time, we’ll discuss why the function $xyz$ gives a body with tetrahedral symmetry, as well as how to create even more solids with a number of different groups of symmetry. Until next time!</p>
+
+
+      
+        
+      
+        
+      
+      <a class="backto" href="/~ormsbyk/projectproject/">&larr; Back to Project Project Home</a>
+    </div>
+    <div class="sidebar">
+      
+        <div class="resources">
+          <h2>Project Resources</h2>
+          <ul>
+            
+            <li>
+              <a class="resource-link" href="/~ormsbyk/projectproject/assets/posts/constant-width-1/reuleaux.png" title="Reuleaux triangle">Reuleaux triangle</a>
+            </li>
+            
+            <li>
+              <a class="resource-link" href="/~ormsbyk/projectproject/assets/posts/constant-width-1/crescent.png" title="Crescent">Crescent</a>
+            </li>
+            
+            <li>
+              <a class="resource-link" href="/~ormsbyk/projectproject/assets/posts/constant-width-1/supportlines.gif" title="Support Lines Animation">Support Lines Animation</a>
+            </li>
+            
+            <li>
+              <a class="resource-link" href="/~ormsbyk/projectproject/assets/posts/constant-width-1/analyticreuleaux.png" title="Analytic Reuleaux Triangle">Analytic Reuleaux Triangle</a>
+            </li>
+            
+            <li>
+              <a class="resource-link" href="/~ormsbyk/projectproject/assets/posts/constant-width-1/xyz.stl" title="xyz Body">xyz Body</a>
+            </li>
+            
+            <li>
+              <a class="resource-link" href="/~ormsbyk/projectproject/assets/posts/constant-width-1/suppinter.png" title="Support Line Intersection">Support Line Intersection</a>
+            </li>
+            
+          </ul>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<script src="/~ormsbyk/projectproject/assets/js/three.min.js"></script>
+<script src="/~ormsbyk/projectproject/assets/js/stl-loader.min.js"></script>
+<script src="/~ormsbyk/projectproject/assets/js/orbit-controls.min.js"></script>
+<script src="/~ormsbyk/projectproject/assets/js/init-stl.js"></script>
+<!-- 25 August 2017 --> 
+
+
+
+  <script>
+    document.querySelectorAll("script[type='math/tex']").forEach(function(el) {
+      el.outerHTML = katex.renderToString(el.textContent, { displayMode: false });
+    });
+
+    document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el) {
+      el.outerHTML = katex.renderToString(el.textContent.replace(/%.*/g, ''), { displayMode: true });
+    });
+  </script>
+</body>

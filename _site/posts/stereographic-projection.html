@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Project Project: Stereographic Projection </title>
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/~ormsbyk/projectproject/assets/css/normalize.min.css">
+
+  <!-- KaTeX assets -->
+  <link rel="stylesheet" href="/~ormsbyk/projectproject/assets/css/katex.min.css">
+  <script src="/~ormsbyk/projectproject/assets/js/katex.min.js"></script>
+
+  <!-- Site assets -->
+  <!-- <link rel="stylesheet" href="/~ormsbyk/projectproject/assets/css/screen.css"> -->
+  <link rel="stylesheet" href="/~ormsbyk/projectproject/assets/css/screen.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans|Merriweather:400,400i,700,700i" rel="stylesheet">
+</head>
+<body>
+  <div class="post">
+  <header>
+    <a href="/~ormsbyk/projectproject/" title="Project Project Home">Project Project</a>
+  </header>
+  <div class="container">
+    <div class="post-header">
+      <div class="topic-label">3D Printing</div>
+      <h1>Stereographic Projection</h1>
+    </div>
+  </div>
+  
+    
+      <div class="post-feature">
+        
+
+<img style=" " src="/~ormsbyk/projectproject/assets/posts/stereographic-projection/Stereographic_projection_in_3D.svg.png"  />
+
+
+      </div>
+    
+  
+  <div class="container below-fold">
+    <div class="post-body">
+      <div class="byline">By Henry Blanchette,&nbsp; 6 August 2017</div>
+      <h2 id="introduction">Introduction</h2>
+
+<p>Stereographic projection, in short, is a technique for preserving the structure of a set on <script type="math/tex">\mathbb{S}^n</script> in a <script type="math/tex">n</script>-dimensional representation.Doing this can be extremely useful when, for example, you have some 4D surface on <script type="math/tex">\mathbb{S}^3</script>, but you want to be able to actually see it. This comes up in my work with <a href="/~ormsbyk/projectproject/posts/milnor-fibrations">Milnor Fibrations</a>, where the fibers do in fact live on <script type="math/tex">\mathbb{S}^3</script>. This article will explain how stereographic projection works in general, and at the end there are some neat, interactive examples.</p>
+
+<p>How does this sort of projection preserve what kind of structure, and how does it work exactly? Read more to find out.</p>
+
+<h2 id="stereographic-projection">Stereographic Projection</h2>
+
+<p>First of all I want to make notation clear, for the notation of an <script type="math/tex">n</script>-sphere (<script type="math/tex">\mathbb{S}^n</script>) is a little counterintuitive. A <script type="math/tex">n</script>-sphere is a sphere in <script type="math/tex">n-1</script> dimensions: A 1-sphere is a circle (2-dimensional), a 2-sphere is 3-dimensional, a 3-sphere is 4-dimensional, etc. Additionally, <script type="math/tex">n</script>-spheres contain only the points that are the sphere’s radius away from the sphere’s center, and no points in between. This contrasts <script type="math/tex">\mathbb{S}^n</script> from a closed <script type="math/tex">n</script>-disk (<script type="math/tex">\mathbb{D}^n</script>), which contains all the points on and within the <script type="math/tex">\mathbb{S}^n</script>. Now on to projection!</p>
+
+<p>Let’s try projecting <script type="math/tex">\mathbb{S}^1 \rightarrow \mathbb{R}^1</script>, so <script type="math/tex">n=1.</script>. It is possible to modify the location and size of <script type="math/tex">\mathbb{S}^n,</script> but let’s not worry about that right now. To project a point <script type="math/tex">p</script>, from this circle down onto <script type="math/tex">\mathbb{R}^1</script>, draw a line from the top of the circle, a point we will call <script type="math/tex">\infty</script>, through <script type="math/tex">p</script> making sure to extend your line so that it passes through <script type="math/tex">\mathbb{R}^1</script>. The point at which this line intersects <script type="math/tex">\mathbb{R}^1</script> is <script type="math/tex">p^\prime.</script></p>
+
+<p>In the gif below, the green dot is <script type="math/tex">p</script> and the blue dot is <script type="math/tex">p^\prime.</script></p>
+
+<p><img src="../assets/posts/stereographic-projection/stereographic2D.gif" alt="" /></p>
+
+<p>It is hard to tell, but the frame where the green dot would be at the top of the circle is missing (intentionally). It turns out that our name for that point was appropriate; it would map to <script type="math/tex">\pm \infty</script> on <script type="math/tex">\mathbb{R}^1.</script> This doesn’t make sense for the projection though, so one way to solve this is just to remove <script type="math/tex">\infty</script> from the domain, via the final mapping</p>
+
+<script type="math/tex; mode=display">\mathbb{S}^n \setminus \infty \rightarrow \mathbb{R}^n</script>
+
+<p>This 2D to 1D example probably seems boring, but it clearly shows the process. If you are interested in the aesthetics of 3D to 2D stereographic projection, I recommend you check out Henry Segerman’s models that use a light source at [latex]\infty[/latex] to project a cutout [latex]\mathbb{S}^n[/latex] onto the ground: <a href="https://www.thingiverse.com/thing:1608550">(7,3,2) triangles</a>, <a href="https://www.thingiverse.com/thing:1608531">(5,3,2) triangles</a>, <a href="https://www.thingiverse.com/thing:477006">(7,3,2) triangles (small)</a>.</p>
+
+<p><img src="https://thingiverse-production-new.s3.amazonaws.com/renders/67/93/fc/10/85/7bcb839d83537413cefdb521bc70cb85_preview_featured.jpg" alt="(7,3,2) triangles" /></p>
+
+<h2 id="interactive-examples">Interactive Examples</h2>
+
+<p>The 3D model below demonstrates a circle on <script type="math/tex">\mathbb{S}^2</script> being mapped to <script type="math/tex">\mathbb{R}^2</script> via stereographic projection (created by Kyle Ormsby). Note that the circle is preserved!</p>
+
+<div class="stl-container" data-filename="/~ormsbyk/projectproject/assets/posts/stereographic-projection/stereo_repaired.stl">
+  <div class="tip">Interactive 3D Model</div>
+  <span class="loading">Loading...</span>
+</div>
+
+<p>For some more interactive examples, I’ve created a Mathematica notebook that demonstrates stereographic projection into <script type="math/tex">\mathbb{R}^3, \mathbb{R}^2</script> and, of course, <script type="math/tex">\mathbb{R}^1.</script> Check it out here: <a href="../assets/posts/stereographic-projection/stereographic-projection.nb">stereographic projection</a></p>
+
+<h2 id="application---milnor-fibrations">Application - Milnor Fibrations</h2>
+
+<p>Now that you’ve learned about the process of stereographically projecting, I reccomend that you check out my article about <a href="/~ormsbyk/projectproject/posts/milnor-fibrations">Milnor Fibrations</a>, a mesmerizing application of this straightforward process of projecting from the dimensions above!</p>
+
+      
+        
+      
+        
+          <div class="bio">
+            <h3>About the author</h3> <p>I am a computer science and math student here at Reed college. I live in the bay area in California, but much prefer the cooler and rainy weather in Portland. For this summer, I am working with Kyle on visualizing Gradient Flow, hopefully along with some aspects of Morse theory, and Milnor Fibrations. Along with mathematical visualization, I also am very interested in simulation. A lot of my work is available on my github page. Specifically, I investigate cellular automata variants and functional programming. Email me if you are interested in Reed, Project Project or any of my other work!</p>
+
+          </div>
+        
+      
+      <a class="backto" href="/~ormsbyk/projectproject/">&larr; Back to Project Project Home</a>
+    </div>
+    <div class="sidebar">
+      
+        <div class="resources">
+          <h2>Project Resources</h2>
+          <ul>
+            
+            <li>
+              <a class="resource-link" href="/~ormsbyk/projectproject/assets/posts/stereographic-projection/stereographic-projection.nb" title="Stereographic Projection Interactive Notebook">Stereographic Projection Interactive Notebook</a>
+            </li>
+            
+            <li>
+              <a class="resource-link" href="/~ormsbyk/projectproject/assets/posts/stereographic-projection/stereo_repaired.stl" title="Stereographically projected circle">Stereographically projected circle</a>
+            </li>
+            
+          </ul>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<script src="/~ormsbyk/projectproject/assets/js/three.min.js"></script>
+<script src="/~ormsbyk/projectproject/assets/js/stl-loader.min.js"></script>
+<script src="/~ormsbyk/projectproject/assets/js/orbit-controls.min.js"></script>
+<script src="/~ormsbyk/projectproject/assets/js/init-stl.js"></script>
+<!--  6 August 2017 --> 
+
+
+
+  <script>
+    document.querySelectorAll("script[type='math/tex']").forEach(function(el) {
+      el.outerHTML = katex.renderToString(el.textContent, { displayMode: false });
+    });
+
+    document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el) {
+      el.outerHTML = katex.renderToString(el.textContent.replace(/%.*/g, ''), { displayMode: true });
+    });
+  </script>
+</body>

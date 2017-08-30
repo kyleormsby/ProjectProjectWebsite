@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Project Project: Level Sets and Gradient Flow </title>
+  <meta name="description" content="">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="/~ormsbyk/projectproject/assets/css/normalize.min.css">
+
+  <!-- KaTeX assets -->
+  <link rel="stylesheet" href="/~ormsbyk/projectproject/assets/css/katex.min.css">
+  <script src="/~ormsbyk/projectproject/assets/js/katex.min.js"></script>
+
+  <!-- Site assets -->
+  <!-- <link rel="stylesheet" href="/~ormsbyk/projectproject/assets/css/screen.css"> -->
+  <link rel="stylesheet" href="/~ormsbyk/projectproject/assets/css/screen.css">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans|Merriweather:400,400i,700,700i" rel="stylesheet">
+</head>
+<body>
+  <div class="post">
+  <header>
+    <a href="/~ormsbyk/projectproject/" title="Project Project Home">Project Project</a>
+  </header>
+  <div class="container">
+    <div class="post-header">
+      <div class="topic-label">Multivariable Calculus</div>
+      <h1>Level Sets and Gradient Flow</h1>
+    </div>
+  </div>
+  
+    
+      <div class="post-feature">
+        
+
+<img style=" " src="/~ormsbyk/projectproject/assets/posts/level-sets/image.jpeg0001.jpg"  />
+
+
+      </div>
+    
+  
+  <div class="container below-fold">
+    <div class="post-body">
+      <div class="byline">By Henry Blanchette,&nbsp;10 July 2017</div>
+      <p>Level sets, the gradient, and gradient flow are methods of extracting specific features of a surface. You’ve heard of level sets and the gradient in vector calculus class – level sets show slices of a surface and the gradient shows a sort of 2D “slope” of a surface. These measurements are useful on their own, but they hint at something else, something more abstract. The gradient vectors are perpendicular to the level sets, so will always be in the direction of the “slope” of a point toward a point on a level set. But how would you represent that? The answer is the concept of <em>gradient flow</em>. Read more to learn about how these three standard measurements fit together to <em>flow</em> along a surface, much like a liquid or rolling object.</p>
+
+<h2 id="levelsets">Level Sets</h2>
+
+<p>Consider a function <script type="math/tex">f : \mathbb{R}^2 \rightarrow \mathbb{R}</script>. If you were to graph this as a 3D plot, you can visualize how this would turn out to be a cone-like surface, with the small end at 0. This represents the solutions to this equation in three variables. What happens when we want the solutions in two variables, instead? The goal would be to obtain the solutions to this equation at a certain <em>level, </em>meaning at a constant value for one of the variables. Let’s choose <script type="math/tex">z</script>. The level set of such a function for a given <script type="math/tex">z</script> is</p>
+
+<script type="math/tex; mode=display">\{ (x,y) \in \mathbb{R}^2 \mid \ f(x,y)=z \}</script>
+
+<p>For example, let’s say  <script type="math/tex">f:(x,y) \mapsto x^2+y^2</script>. Now we need to pick a few <script type="math/tex">z</script>-levels to show the level sets at, say <script type="math/tex">z\in\{0,1,2,3,4\}</script>. These level sets turn out to be</p>
+
+<p><img style=" max-width: 300px;  " src="/~ormsbyk/projectproject/assets/posts/level-sets/levelsets1.jpg" /></p>
+
+<p>where the circle radius is increasing with <script type="math/tex">z</script>-level. All of these level sets turn out to be circles, with one exception being the point at <script type="math/tex">(0,0)</script> – the only solution to <script type="math/tex">x^2+y^2=0</script>. Why are the level sets circles when <script type="math/tex">z>0</script>? An examination of our function shows that, when you solve for <script type="math/tex">f</script>’s level set at <script type="math/tex">z</script>, you get an equation of the form <script type="math/tex">x^2 + y^2 = z</script>, which is the equation for a circle with radius <script type="math/tex">\sqrt{z}</script>. This explains why the circles are getting bigger, but at a decreasing rate; the circle radius is increasing at the rate <script type="math/tex">\frac{1}{2\sqrt{z}}</script>. This is an extremely simple example, but it demonstrates level curves, and some following concepts very clearly.</p>
+
+<p>So what are level curves showing? The graph above may have reminded you of something – a contour (or topographical) map of a landscape. Essentially the level sets are the contour lines on a map of a surface. They are cross-sections through the surface, in this case at specific <script type="math/tex">z</script>-levels.</p>
+
+<h2 id="the-gradient">The Gradient</h2>
+
+<p>The <em>gradient</em> of a scalar function records its partial derivatives throughout its domain. For example, consider a function <script type="math/tex">f:\mathbb{R}^2 \to \mathbb{R}</script>. Then,</p>
+
+<script type="math/tex; mode=display">\nabla f : (x,y) \mapsto \left( \frac{\partial f}{\partial x}(x,y), \frac{\partial f}{\partial y}(x,y) \right)</script>
+
+<p>is a function <script type="math/tex">\mathbb{R}^2\to \mathbb{R}^2</script>.</p>
+
+<p>Let’s take a new function <script type="math/tex">g: (x,y) \mapsto x^2-y^2</script> as an example. Since the gradient has range <script type="math/tex">\mathbb{R}^2</script>, we can use a vector plot to visualize it, with the level sets for <script type="math/tex">z\in \{-5,-4,\ldots,4,5\}</script> in the background:</p>
+
+<p><img style=" max-width: 300px;  " src="/~ormsbyk/projectproject/assets/posts/level-sets/gradient1.jpg" /></p>
+
+<p>What are these gradient arrows representing? It turns out that these arrows show, at each point, which direction yields the largest increase in the value of <script type="math/tex">g</script>; the magnitude gives the rate of increase. If you are curious, this is a depiction of <script type="math/tex">f:(x,y)\mapsto x^2+y^2</script>’s gradient:</p>
+
+<p><img style=" max-width: 300px;  " src="/~ormsbyk/projectproject/assets/posts/level-sets/gradient2.jpg" /></p>
+
+<h2 id="gradient-flow">Gradient Flow</h2>
+
+<p>These level curves and gradient vector fields are slowly building an outline of a surface in <script type="math/tex">\mathbb{R}^3</script>. However, we are still lacking a way of connecting the curves and the arrows. How would one <em>follow</em> the vectors to get from one level curve to the next? With this ability, you could <em>flow</em> across continuously-spaced level curves.</p>
+
+<p>The features we aim to achieve are:</p>
+
+<ul>
+  <li>The flow’s points are solutions to the original function – the flow with be on the surface;</li>
+  <li>The flow’s derivative is the gradient – the flow will follow the gradient vectors.</li>
+</ul>
+
+<p>For a point <script type="math/tex">(x,y)</script> in the domain of a function <script type="math/tex">f:\mathbb{R}^2 \to \mathbb{R}</script>, the curve that starts at <script type="math/tex">(x,y)</script> and accomplishes this flow is <script type="math/tex">\gamma_{(x,y)} :\mathbb{R} \rightarrow \mathbb{R}^2</script> such that</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+  \gamma_{(x,y)}(0) &= (x,y) \\
+  \gamma_{(x,y)}^\prime (t) &= \nabla f (\gamma_{(x,y)} (t))
+\end{aligned} %]]></script>
+
+<p>As you can see, <script type="math/tex">\gamma</script>’s derivative will follow the gradient and <script type="math/tex">\gamma</script> will be centered around a point of “origin” where the flow <em>flows</em> from. What does <script type="math/tex">\gamma</script> look like? Let’s consider gradient flows for our usual functions</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+  f(x,y) &= x^2 + y^2 \\
+  g(x,y) &= x^2 - y^2
+\end{aligned} %]]></script>
+
+<p><script type="math/tex">\gamma_{(x,y)}</script> of <script type="math/tex">f</script> needs to be a function where</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{aligned}
+  \gamma_{(x,y)}(t) &\mapsto (x^\prime, y^\prime) \\
+  \gamma_{(x,y)}(0) &= (x,y) \\
+  \gamma_{(x,y)}^\prime &= \nabla f (x^\prime, y^\prime) = (2 x^\prime, 2 y^\prime)
+\end{aligned} %]]></script>
+
+<p>Solve this differential equation and you get</p>
+
+<script type="math/tex; mode=display">\gamma_{(x,y)} = (x e^{2t}, y e^{2t})</script>
+
+<p>What does <script type="math/tex">\gamma</script> <em>look</em> like? Below are the usual level curves and gradient vector field, and now with the flow lines in green starting at some blue points on the unit circle (we let <script type="math/tex">t \in [-0.75,0.75]</script>):</p>
+
+<p><img style=" max-width: 300px;  " src="/~ormsbyk/projectproject/assets/posts/level-sets/flows1.jpg" /></p>
+
+<p>And for <script type="math/tex">g</script>, with the same parameters:</p>
+
+<p><img style=" max-width: 300px;  " src="/~ormsbyk/projectproject/assets/posts/level-sets/flows2.jpg" /></p>
+
+<p>So we have produced gradient flows, and they join the level curves. But what exactly are we visualizing here? One way to think about it is noting that since the gradient is the direction of steepest ascent in the <script type="math/tex">z</script>-direction, the reverse of the flow is the path of an object as it rolls on the surface, starting from a high place and rolling down to a lower place (in the exact opposite direction as the gradient vectors point).</p>
+
+<h2 id="to-3d">To 3D</h2>
+
+<p>I’ve been showing you 2D pictures of curves and arrows, but the functions that we have been considering are inherently 3D in nature. The functions <script type="math/tex">f,g</script> from above can be visualized as the following parabaloid and saddle surface, respectively:</p>
+
+<p><img style=" max-width: 300px;  " src="/~ormsbyk/projectproject/assets/posts/level-sets/parabaloid-1.jpg" /></p>
+
+<p><img style=" max-width: 300px;  " src="/~ormsbyk/projectproject/assets/posts/level-sets/levels3D_hyperbaloid-2.jpg" /></p>
+
+<p>These shouldn’t be surprising visuals. The level curves, being cross-sections through the surfaces at specified <script type="math/tex">z</script>-levels, are only 2D, but they can be fit into this 3D depiction by simply setting the level curves’s <script type="math/tex">z</script>-coordinate to its respective <script type="math/tex">z</script>-level, highlighted in black:</p>
+
+<p><img style=" max-width: 300px;  " src="/~ormsbyk/projectproject/assets/posts/level-sets/levels3D_parabaloid.jpg" /></p>
+
+<p><img style=" max-width: 300px;  " src="/~ormsbyk/projectproject/assets/posts/level-sets/levels3D_hyperbaloid-1.jpg" /></p>
+
+<p>And finally, the same sort of process can be applied to the flow. We want to preserve the <script type="math/tex">x,y</script> coordinates of the flow, but we need to decide at what <script type="math/tex">z</script>-coordinate to put each point on the flow. The natural choice is the following function:</p>
+
+<script type="math/tex; mode=display">\mathrm{flow}_{(x,y)}:t\mapsto ( \gamma_{(x,y)}(t), f( \gamma_{(x,y)} (t)) )</script>
+
+<p>There are too many parentheses, but essentially this function plots the flow from before, and assigns its <script type="math/tex">z</script>-coordinate to be the value of the original function at the <script type="math/tex">(x^\prime , y^\prime )</script> point that <script type="math/tex">\gamma</script> returns (as a function of <script type="math/tex">t</script>, of course). Here are our two favorite functions fully rendered with level (black) and 3D flow lines (orange):</p>
+
+<p><img style=" max-width: 300px;  " src="/~ormsbyk/projectproject/assets/posts/level-sets/parabaloid_complete.jpg" /></p>
+
+<p><img style=" max-width: 300px;  " src="/~ormsbyk/projectproject/assets/posts/level-sets/hyperbaloid_complete.jpg" /></p>
+
+<p>For each, the flow lines originate at points on the <script type="math/tex">1</script>-level set, and we let <script type="math/tex">t</script> vary through a large enough interval for the flow lines to fill up the surface. If you imagine looking at these 3D-structures from above, you can confirm that they match the previous 2D graphs. In the parabaloid, you can see that the flow lines converge at the critical point <script type="math/tex">z=0</script>, where the level set is a single point. This makes sense intuitively; an object would roll down the slope to the bottom, and come to rest.</p>
+
+<p>As for the saddle, none of the pictured flow lines stop at the critical point (the center of the saddle at <script type="math/tex">z=0</script>). There are, in fact, exactly four flow lines that would stop there (they are clearly visible in the 2D depiction in <em>Gradient Flow</em>); the paucity of flow lines going through <script type="math/tex">g</script>’s critical point makes that point <em>unstable</em>, a feature I will return to later if this project heads towards Morse theory.</p>
+
+<h2 id="printing">Printing</h2>
+
+<p>In the <em>To 3D</em> section, I displayed various 3D models of the concepts I explained. Though these 2D projections on your computer screen are very helpful, physical 3D models can offer a more intuitive and clear expression of the truly 3D surfaces that are concerned. Especially with more complicated models, 3D printing gains a huge advantage of being relatively uncluttered and easily manipulatable.</p>
+
+<p>I am currently working on printing a few different models, and will have updates on their progress in the next two weeks. In the meantime, check out my next article on 3D printing!</p>
+
+      
+        
+      
+        
+          <div class="bio">
+            <h3>About the author</h3> <p>I am a computer science and math student here at Reed college. I live in the bay area in California, but much prefer the cooler and rainy weather in Portland. For this summer, I am working with Kyle on visualizing Gradient Flow, hopefully along with some aspects of Morse theory, and Milnor Fibrations. Along with mathematical visualization, I also am very interested in simulation. A lot of my work is available on my github page. Specifically, I investigate cellular automata variants and functional programming. Email me if you are interested in Reed, Project Project or any of my other work!</p>
+
+          </div>
+        
+      
+      <a class="backto" href="/~ormsbyk/projectproject/">&larr; Back to Project Project Home</a>
+    </div>
+    <div class="sidebar">
+      
+    </div>
+  </div>
+</div>
+
+<script src="/~ormsbyk/projectproject/assets/js/three.min.js"></script>
+<script src="/~ormsbyk/projectproject/assets/js/stl-loader.min.js"></script>
+<script src="/~ormsbyk/projectproject/assets/js/orbit-controls.min.js"></script>
+<script src="/~ormsbyk/projectproject/assets/js/init-stl.js"></script>
+<!-- 10 July 2017 --> 
+
+
+
+  <script>
+    document.querySelectorAll("script[type='math/tex']").forEach(function(el) {
+      el.outerHTML = katex.renderToString(el.textContent, { displayMode: false });
+    });
+
+    document.querySelectorAll("script[type='math/tex; mode=display']").forEach(function(el) {
+      el.outerHTML = katex.renderToString(el.textContent.replace(/%.*/g, ''), { displayMode: true });
+    });
+  </script>
+</body>
