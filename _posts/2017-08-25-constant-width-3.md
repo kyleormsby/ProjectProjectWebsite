@@ -4,12 +4,6 @@ title: Fabrication of Bodies of Constant Width
 author: Cameron Fish and Jalan Ziyad
 category: Constant Width
 resources:
-  - name: Starfish
-    file: starfish.png
-  - name: Star
-    file: star.jpg
-  - name: Screenshot
-    file: screenshot.png
   - name: basis 1
     file: c1.stl
   - name: basis 2
@@ -20,16 +14,15 @@ resources:
     file: c4.stl
   - name: basis 1
     file: c0011.stl	
-  - name: cyclic solid
-    file: c0011.jpg
-  - name: bodies
-    file: bodies.jpg
   - name: hole demo
     file: holedemo.mp4
   - name: roller demo
     file: rollerdemo.mp4 
   - name: cw notebook
     file: cw.nb
+feature:
+    file: bodies.jpg
+    file_type: image
     
 ---
 
