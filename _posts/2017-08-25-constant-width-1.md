@@ -4,18 +4,11 @@ title: Constructing Bodies of Constant Width
 author: Cameron Fish and Jalan Ziyad
 category: Constant Width
 resources:
-  - name: Reuleaux triangle
-    file: reuleaux.png
-  - name: Crescent
-    file: crescent.png
-  - name: Support Lines Animation
-    file: supportlines.gif
-  - name: Analytic Reuleaux Triangle
-    file: analyticreuleaux.png
   - name: xyz Body
     file: xyz.stl
-  - name: Support Line Intersection
+feature:
     file: suppinter.png
+    file_type: image
 ---
 
 <script type="text/javascript" async

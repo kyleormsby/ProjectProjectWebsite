@@ -14,7 +14,9 @@ resources:
     file: ico15.stl
   - name: generators
     file: gens.txt
-
+feature:
+    file: tet7.stl
+    file_type: stl
 ---
 
 <script type="text/javascript" async
