@@ -4,15 +4,15 @@ title: Fabrication of Bodies of Constant Width
 author: Cameron Fish and Jalan Ziyad
 category: Constant Width
 resources:
-  - name: basis 1
+  - name: (1,0,0,0) body
     file: c1.stl
-  - name: basis 2
+  - name: (0,1,0,0) body
     file: c2.stl
-  - name: basis 3
+  - name: (0,0,1,0) body
     file: c3.stl
-  - name: basis 4
+  - name: (0,0,0,1) body
     file: c4.stl
-  - name: basis 1
+  - name: (0,0,1,1) body
     file: c0011.stl	
   - name: hole demo
     file: holedemo.mp4
@@ -119,10 +119,10 @@ We carried out this same process on a number of bodies of constant width, to var
 
 As a fun way to present these objects, we also created an acrylic box with a single circular hole in the top. Each body has the same width (defined as in the first post) as the hole, and so they can all fit through (in some direction).
 
-{% include image name="holedemo.mp4" caption="Each object can fit through the hole. This box was made on a laser printer using a template from [makeabox.io](https://makeabox.io)."  %}
+{% include video name="holedemo.mp4" caption="Each object can fit through the hole.  This box was made on a laser printer using a template from makeabox.io" %}
 
 Here's another video demonstrating how these bodies can be used as rollers:
 
-{% include image name="rollerdemo.mp4" caption="The box remains level and at a constand distance from the ground."  %}
+{% include video name="rollerdemo.mp4" caption="The box remains level and at a constant distance from the ground."  %}
 
 We had a lot of fun with this project, and want to thank our professor Kyle Ormsby for his knowledge and enthusiasm! We hope you found these posts both mathematically and visually interesting. If you’d like to play around with some of these shapes and ideas yourself, have a look at our mathematica code [here](/~ormsbyk/projectproject/assets/posts/constant-width-3/cw.nb). 
