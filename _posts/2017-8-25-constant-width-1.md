@@ -59,7 +59,7 @@ Here's an example of a body of constant width in three dimensions:
 
 This body is piecewise smooth and has the same symmetries as a tetrahedron. It is an example from a particularly interesting class of bodies of constant width which exhibit the symmetries of familiar solids (tetrahedron, octahedron, icosahedron, etc), and other subgroups of $$SO(3)$$, i.e. rigid rotations of $$\mathbb{R}^3$$.
 
-How exactly can we create these bodies, given one of these support functions? Recall that our definition of constant width involves parallel support hyperplanes which bound the body in every direction. These planes are exactly $$u\cdot x = h(u)$$ for all $$u$$ in $$\mathbb{S}^{n-1}$$ (i.e. the hyperplane $$u_1x_1 + u_2x_2 + u_3x_3 + … + u_nx_n = h(u)$$).
+How exactly can we create these bodies, given one of these support functions? Recall that our definition of constant width involves parallel support hyperplanes which bound the body in every direction. These planes are exactly $$u\cdot x = h(u)$$ for all $$u$$ in $$\mathbb{S}^{n-1}$$ (i.e. $$u_1x_1 + u_2x_2 + … + u_nx_n = h(u)$$).
 
 If our support function h satisfies the above conditions, and so defines a convex body, then this body is the set of points x such that:
 
@@ -84,5 +84,5 @@ H|S^{1} &= 1 + xyz \\
 \end{aligned}
 $$
 
-Now, we can parametrize this gradient with spherical coordinates and plot it using Mathematica, giving the body seen above. Next time, we’ll discuss why the function $xyz$ gives a body with tetrahedral symmetry, as well as how to create even more solids with a number of different groups of symmetry. Until next time!
+Now, we can parametrize this gradient with spherical coordinates and plot it using Mathematica, giving the body seen above. Next time, we’ll discuss why the function $$xyz$$ gives a body with tetrahedral symmetry, as well as how to create even more solids with a number of different groups of symmetry. Until next time!
 
