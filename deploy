@@ -1,0 +1,4 @@
+#!/bin/sh
+
+jekyll build
+rsync -crvz --delete-after --delete-excluded  _site/ ormsbyk@sftp.reed.edu:/afs/reed.edu/user/o/r/ormsbyk/html/projectproject
