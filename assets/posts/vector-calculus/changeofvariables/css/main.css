@@ -1,0 +1,66 @@
+:root {
+    --doc-width: 800px;
+}
+
+body {
+    margin: 0px;
+    padding: 20px;
+    /*overflow: hidden;*/
+}
+
+input {
+    width: 200px;
+}
+
+#border-left {
+    position: fixed;
+    left: calc(50vw - 407px);
+    top: 0px;
+    width: 2px;
+    height: 100vh;
+
+    box-shadow: -2px 0px 0px 0px gray;
+    background-color: black;
+}
+
+#border-right {
+    position: fixed;
+    left: calc(50vw + 390px);
+    top: 0px;
+    width: 2px;
+    height: 100vh;
+
+    box-shadow: 2px 0px 2px 0px black;
+    background-color: black;
+}
+
+#container {
+    margin: auto;
+    width: var(--doc-width);
+    padding: 40px;
+}
+
+#canvas {
+    margin-top: 40px;
+    width: var(--doc-width);
+}
+
+.content-description {
+    margin: auto;
+}
+
+#container h1 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#container p {
+    text-align: justify;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#container h2 {
+    padding-left: 20px;
+    padding-right: 40px;    
+}
