@@ -3,7 +3,7 @@ layout: post
 title: Vector Calculus Demonstrations
 author: Henry Blanchette
 published: true
-category: Vector Calculus
+category: Multivariable Calculus
 ---
 
 [Iterated Integration](../assets/posts/vector-calculus/iteratedintegrals/demos.html)
